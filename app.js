@@ -1,10 +1,9 @@
-const http = require("http");
+var response;
 
-const port = process.env.PORT || 8080;
+app.get('/', function (req, res) {
+    response = 'This is version 2 of the app.' + '\n';
 
-http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Hello from OpenShift 🚀");
-}).listen(port);
+    //send the response to the client
+    res.send(response);
 
-console.log("Server running on port " + port);
+});
